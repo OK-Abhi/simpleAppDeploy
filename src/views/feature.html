@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple App</title>
+    <script type="importmap" defer>
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+          "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/css/feature-style.css">
+    <!-- <style>
+      #container {
+        display: grid;
+        /* flex-direction: row; */
+        overflow-x: hidden;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        gap: 4px;
+        align-content: center;
+        margin-bottom: 6.25rem;
+      }
+      body {
+        background-color: black;
+        color: lightblue;
+        font-family: poppins, sans-serif;
+      }
+      #submit {
+        margin-left: 0.25rem;
+        border: 1px solid lightgreen;
+      }
+
+      h3:hover,
+      #submit:hover {
+        color: lightgreen;
+      }
+      h1 {
+        margin: 4.5rem;
+        text-align: center;
+      }
+      .inputs {
+        margin-inline: auto;
+        padding: 40px 30px;
+        border-radius: 20px;
+        justify-items: center;
+        align-items: center;
+        border: 2px solid rgb(50, 55, 83);
+        width: 16.25rem;
+      }
+
+      .inputs:hover {
+        border: 2px solid rgb(50, 83, 70);
+      }
+
+      ul {
+        display: flex;
+        border-radius: 40px;
+        border: 2px solid rgb(6, 81, 147);
+        background-color: black;
+        padding-inline: 200px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-inline: auto;
+        justify-content: space-between;
+        width: 400px;
+        height: 60px;
+        align-items: center;
+      }
+      ul:hover {
+        border: 2px solid rgb(6, 147, 79);
+      }
+      h1:hover {
+        color: rgb(6, 81, 147);
+      }
+      li {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: double;
+        /* display: flex;
+        flex-direction: row; */
+        color: skyblue;
+        outline: transparent;
+        border-radius: 1.5rem;
+        margin-inline: 1rem;
+        padding: 1rem 1rem;
+      }
+      a:hover {
+        color: mediumseagreen;
+      }
+
+      p:hover {
+        color: rgb(6, 81, 147);
+        text-transform: capitalize;
+        /* width: 800px; */
+      }
+      h2:hover {
+        color: lightgreen;
+      }
+      h1 {
+        font-size: 3.5rem;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-content: center;
+      }
+      @media screen and (max-width: 768px) {
+        hr {
+          width: 2px;
+          background-color: aliceblue;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        hr {
+          height: 1px;
+          background-color: aliceblue;
+        }
+      }
+
+      hr {
+        height: 3px;
+        background-color: aliceblue;
+      }
+      #content {
+        margin-top: 8.2rem;
+        margin-bottom: 9.3rem;
+      }
+      #footer-para {
+        width: 15.6rem;
+      }
+      footer {
+        display: flex;
+        flex-direction: row;
+      }
+      #follow {
+        margin-left: 5rem;
+      }
+      main {
+        z-index: 10;
+        position: relative;
+      }
+      #three-container {
+        width: 100%;
+        height: 100vh;
+        /* margin-top: 8rem; */
+        /* margin-left: 1rem; */
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1; /* Place the 3D canvas behind the other content */
+      }
+    </style> -->
+  </head>
+  <body>
+    <header>
+      <section id="sec">
+        <nav id="nav-bar">
+          <ul id="ul-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign up</a></li>
+            <li><a href="/feature">Features</a></li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+    <div id="three-container"></div>
+    <main>
+      <h1>Your Twitter ID</h1>
+      <div id="container">
+        <div class="inputs">
+          <h3>@Random Name</h3>
+          <h3>Your post</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            libero rerum amet nulla, dolores, labore quas in totam dolorem,
+            distinctio sapiente minus cum praesentium voluptatibus itaque
+            eveniet voluptatum sit qui!
+          </p>
+        </div>
+        <div class="inputs">
+          <h3>@Random Name</h3>
+          <h3>Your post</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            libero rerum amet nulla, dolores, labore quas in totam dolorem,
+            distinctio sapiente minus cum praesentium voluptatibus itaque
+            eveniet voluptatum sit qui!
+          </p>
+        </div>
+        <div class="inputs">
+          <h3>@Random Name</h3>
+          <h3>Your post</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            libero rerum amet nulla, dolores, labore quas in totam dolorem,
+            distinctio sapiente minus cum praesentium voluptatibus itaque
+            eveniet voluptatum sit qui!
+          </p>
+        </div>
+      </div>
+    </main>
+    <br />
+    <hr />
+    <footer>
+      <section>
+        <h2>Contact</h2>
+        <p id="footer-para">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut possimus
+          quasi
+        </p>
+      </section>
+      <section id="follow">
+        <h2>Follow Us On</h2>
+        <p id="footer-para">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi,
+          eveniet? Tempora quisquam
+        </p>
+      </section>
+      <section id="follow">
+        <h2>Emails</h2>
+        <p id="footer-para">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae
+          dicta excepturi, accusantium
+        </p>
+      </section>
+    </footer>
+    <script type="module" src="/js/dynamicModels.js"></script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+#container {
+  display: grid;
+  /* flex-direction: row; */
+  overflow-x: hidden;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  gap: 4px;
+  align-content: center;
+  margin-bottom: 6.25rem;
+}
+body {
+  background-color: black;
+  color: lightblue;
+  font-family: poppins, sans-serif;
+}
+
+h3:hover {
+  color: lightgreen;
+}
+h1 {
+  margin: 4.5rem;
+  text-align: center;
+}
+.inputs {
+  margin-inline: auto;
+  padding: 40px 30px;
+  border-radius: 20px;
+  justify-items: center;
+  align-items: center;
+  border: 2px solid rgb(50, 55, 83);
+  width: 16.25rem;
+}
+
+.inputs:hover {
+  border: 2px solid rgb(50, 83, 70);
+}
+
+ul {
+  display: flex;
+  border-radius: 40px;
+  border: 2px solid rgb(6, 81, 147);
+  background-color: black;
+  padding-inline: 200px;
+  margin-top: 40px; /*1 rem*/
+  margin-bottom: 40px;
+  margin-inline: auto;
+  justify-content: space-between;
+  width: 400px;
+  height: 60px;
+  align-items: center;
+}
+
+ul:hover {
+  border: 2px solid rgb(6, 147, 79);
+}
+
+h1:hover {
+  color: rgb(6, 81, 147);
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: double;
+  color: skyblue;
+  outline: transparent;
+  border-radius: 20px;
+  margin-inline: 10px;
+  padding: 10px 10px;
+}
+
+a:hover {
+  color: mediumseagreen;
+}
+
+p:hover {
+  color: rgb(6, 81, 147);
+  text-transform: capitalize;
+  /* width: 800px; */
+}
+h2:hover {
+  color: lightgreen;
+}
+h1 {
+  font-size: 3.5rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-content: center;
+}
+@media screen and (max-width: 768px) {
+  hr {
+    width: 2px;
+    background-color: aliceblue;
+  }
+}
+@media screen and (min-width: 1024px) {
+  hr {
+    height: 1px;
+    background-color: aliceblue;
+  }
+}
+
+hr {
+  height: 3px;
+  background-color: aliceblue;
+}
+#content {
+  margin-top: 8.2rem;
+  margin-bottom: 9.3rem;
+}
+#footer-para {
+  width: 15.6rem;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+}
+#follow {
+  margin-left: 5rem;
+}
+main {
+  z-index: 10;
+  position: relative;
+}
+#three-container {
+  width: 100%;
+  height: 100vh;
+  /* margin-top: 8rem; */
+  /* margin-left: 1rem; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Place the 3D canvas behind the other content */
+}

@@ -1,0 +1,27 @@
+{
+  "name": "simpleappdeploy",
+  "version": "1.0.0",
+  "description": "A simple app for deployment",
+  "keywords": [
+    "simple",
+    "app",
+    "deploy"
+  ],
+  "license": "ISC",
+  "author": "Nothing",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "@fluree/fluree-client": "^1.2.3",
+    "axios": "^1.9.0",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.9"
+  }
+}

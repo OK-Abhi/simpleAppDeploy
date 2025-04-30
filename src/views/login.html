@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple App</title>
+    <link rel="stylesheet" href="/css/login-style.css" />
+  </head>
+  <body>
+    <header>
+      <section id="sec">
+        <nav id="nav-bar">
+          <ul id="ul-list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign up</a></li>
+            <li><a href="/feature">Features</a></li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+    <div id="container">
+      <form method="post" action="/">
+        <div class="inputs">
+          <h1>Login</h1>
+          <input type="text" name="userName" id="user" placeholder="Username" />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+          <input type="submit" name="submit" id="submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

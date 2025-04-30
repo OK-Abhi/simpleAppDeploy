@@ -1,0 +1,82 @@
+*{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ul {
+  display: flex;
+  border-radius: 40px;
+  border: 2px solid rgb(6, 81, 147);
+  background-color: black;
+  padding-inline: 200px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-inline: auto;
+  justify-content: space-between;
+  width: 400px;
+  height: 60px;
+  align-items: center;
+}
+ul:hover {
+  border: 2px solid rgb(6, 147, 79);
+}
+h1:hover {
+  color: rgb(6, 81, 147);
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: double;
+  color: skyblue;
+  outline: transparent;
+  border-radius: 20px;
+  margin-inline: 10px;
+  padding: 10px 10px;
+}
+a:hover {
+  color: mediumseagreen;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+body {
+  background-color: black;
+  color: lightblue;
+  font-family: poppins, sans-serif;
+}
+input {
+  margin-top: 40px;
+  text-align: center;
+  padding: 4px 4px;
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  outline: transparent;
+  background-color: rgb(15, 14, 14);
+  color: skyblue;
+  border: 1px solid skyblue;
+}
+#submit {
+  margin-left: 4px;
+  border: 1px solid lightgreen;
+}
+
+#submit:hover {
+  color: lightgreen;
+}
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+.inputs {
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 2px solid rgb(50, 55, 83);
+  justify-self: center;
+  align-self: center;
+  width: 260px;
+}
