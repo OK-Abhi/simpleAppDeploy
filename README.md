@@ -13,7 +13,7 @@ npm install
 ``` bash 
 # copy the bash command and paste to it
 
-cp .env.example .env 
+cp .env.sample .env 
 ```
 
 - Change the values of the variables according to your needs.
