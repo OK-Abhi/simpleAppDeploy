@@ -1,4 +1,16 @@
-### Setting Up the Workspace Environment
+### Clone the repository
+
+**Make Sure you have installed the git bash and the Visual Studio Code is your default code editor for git bash**
+
+- To clone the repository you need to run the below command in your git bash
+
+```bash 
+git clone https://github.com/OK-Abhi/simpleAppDeploy.git
+
+cd simpleAppDeploy
+```
+
+### Install the Project Dependencies
 
 - Download the dependencies mention in the package.json file
 
@@ -11,7 +23,7 @@ npm install
 - Copy the `.env.example` file Variables to `.env`:
 
 ``` bash 
-# copy the bash command and paste to it
+# copy the bash command and paste in your command line
 
 cp .env.sample .env 
 ```
