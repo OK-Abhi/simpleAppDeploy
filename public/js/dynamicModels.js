@@ -73,8 +73,7 @@ controls.enableDampingFactor = 1;
 // Camera movement on scroll
 window.addEventListener("scroll", () => {
   const scrollDelta = scrollY; // wheel gives precise/decimal values and scrollY gives +ve integer
-  console.log(scrollDelta);
-
+  
   // Adjust FOV based on scroll
   camera.fov -= scrollDelta * 0.01;
   camera.updateProjectionMatrix();
