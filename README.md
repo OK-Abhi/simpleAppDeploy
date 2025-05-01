@@ -1,6 +1,6 @@
 ### Clone the repository
 
-**Make Sure you have installed the git bash,node js and the Visual Studio Code is your default code editor for git bash**
+**Make Sure you have installed the git bash, node js and the Visual Studio Code is your default code editor for git bash**
 
 - To clone the repository you need to run the below command in your git bash
 
