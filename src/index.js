@@ -23,22 +23,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", mainRoutes);
 
 // Don't Touch this block of code below this comment right now please
-// OR
-// You can, choice is yours
 
-// Login Route
-app.get("/login", (req, res) => {
-  console.log(req.url, req.method);
-  res.sendFile(path.join(rootDir, "views", "login.html"));
-});
 
 // Using the Path module to public the contents of the public folder
 app.use(express.static(path.join(rootDir, "..", "public")));
 
-// Register Route
-app.get("/signup", async (req, res) => {
-  res.sendFile(path.join(rootDir, "views", "register.html"));
-});
 
 // For Testing Purpose
 app.use(express.json());
@@ -46,7 +35,13 @@ app.use(express.json());
 app.use("/api/contacts", contactRoute);
 // pw/generate endpoint auth
 
+// Error Route
+app.use((req, res, next) => {
+  res.status(404).sendFile(path.join(rootDir, "views", "error.html"));
+  // next();
+});
+
 // Server
 app.listen(port, (error) => {
-  console.log(`Listening on ${port} and errror is ${error}`);
+  console.log(`Listening on ${port} and error is ${error}`);
 });

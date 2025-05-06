@@ -1,0 +1,58 @@
+* {
+  background-color: black;
+  font-family: Niagara Engraved;
+}
+
+#error-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: relative;
+}
+
+#error-container {
+  height: 100vh;
+  margin: auto;
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  justify-content: center; /* vertical centering */
+  align-items: center;
+  margin-bottom: 0;
+}
+
+#oops {
+  color: lightcoral;
+  font-size: 140px;
+  font-weight: 700;
+  margin-top: 100px;
+  font-family: poppins;
+}
+
+#error-info {
+  color: aliceblue;
+  font-size: 80px;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  text-align: center;
+  text-decoration: transparent;
+  background-color: lightgreen;
+  color: black;
+  border-radius: 20px;
+  font-size: xx-large;
+  padding: 10px 20px;
+  transform: translateY(1%);
+  transition: transform 0.3s ease;
+}
+
+a:hover {
+  color: rgb(19, 82, 46);
+  transform: translateY(10%);
+}

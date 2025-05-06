@@ -15,8 +15,20 @@ router.get("/", (req, res) => {
     res.sendFile(path.join(rootDir, "views", "index.html"));
 });
 
+// Feature Route
 router.get('/feature', (req, res) => {
     res.sendFile(path.join(rootDir, 'views', 'feature.html'));
 })
+
+// Login Route
+router.get("/login", (req, res) => {
+  console.log(req.url, req.method);
+  res.sendFile(path.join(rootDir, "views", "login.html"));
+});
+// Signup Route
+router.get("/signup", async (req, res) => {
+  res.sendFile(path.join(rootDir, "views", "register.html"));
+});
+
 
 module.exports = router;

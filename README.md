@@ -20,7 +20,7 @@ npm install
 
 ### Setting Up the Environment Variables
 
-- Copy the `.env.example` file Variables to `.env`:
+- Copy the `.env.sample` file Variables to `.env`:
 
 ``` bash 
 # copy the bash command and paste in your command line
