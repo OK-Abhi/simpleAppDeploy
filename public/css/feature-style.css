@@ -91,7 +91,7 @@ h1 {
   justify-content: center;
   align-content: center;
 }
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   hr {
     width: 2px;
     background-color: aliceblue;
@@ -107,7 +107,7 @@ h1 {
 hr {
   height: 3px;
   background-color: aliceblue;
-}
+} */
 #content {
   margin-top: 8.2rem;
   margin-bottom: 9.3rem;
@@ -118,6 +118,9 @@ hr {
 footer {
   display: flex;
   flex-direction: row;
+  border-top: 0.1rem solid #313232;
+  border-width: 100%;
+  box-sizing: border-box;
 }
 #follow {
   margin-left: 5rem;

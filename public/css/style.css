@@ -78,12 +78,12 @@ h1 {
   font-size: 4.5rem;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   hr {
     height: 2px;
     background-color: #333;
   }
-}
+} */
 
 #three-container {
   width: 100%;
@@ -97,7 +97,7 @@ h1 {
 }
 
 /* For large screens */
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   hr {
     height: 3px;
     background-color: #000;
@@ -107,7 +107,7 @@ h1 {
 hr {
   width: 100%;
   background-color: aliceblue;
-}
+} */
 
 #content {
   margin-top: 330px;
@@ -121,6 +121,9 @@ hr {
 footer {
   display: flex;
   flex-direction: row;
+  border-top: 0.1rem solid #313232;
+  border-width: 100%;
+  box-sizing: border-box;
 }
 
 #follow {
