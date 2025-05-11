@@ -11,6 +11,7 @@
 body {
   background-color: black;
   color: lightblue;
+  overflow-x: hidden; /*added for hiding the x axis scroll*/
   font-family: poppins, sans-serif;
 }
 

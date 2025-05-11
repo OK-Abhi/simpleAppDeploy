@@ -63,12 +63,12 @@ p {
   width: 750px;
   font-size: x-large;
 }
-
+/* 
 p:hover {
   color: rgb(6, 81, 147);
   text-transform: capitalize;
   width: 50rem;
-}
+} */
 
 h2:hover {
   color: lightgreen;
