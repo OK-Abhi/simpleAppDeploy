@@ -61,6 +61,16 @@ input {
 #submit {
   margin-left: 4px;
   border: 1px solid lightgreen;
+  margin-top: 40px;
+  text-align: center;
+  padding: 4px 4px;
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  outline: transparent;
+  background-color: rgb(15, 14, 14);
+  color: skyblue;
+  cursor: pointer;
 }
 
 #submit:hover {
@@ -70,11 +80,35 @@ h1 {
   text-align: center;
   font-size: 50px;
 }
-.inputs {
+#input-container {
   padding: 40px 30px;
   border-radius: 20px;
   border: 2px solid rgb(50, 55, 83);
   justify-self: center;
   align-self: center;
   width: 260px;
+}
+
+label {
+  padding: 30px;
+  color: #333;
+}
+
+select {
+  margin-top: 20px;
+  text-align: center;
+  padding: 4px 4px;
+  margin-left: 2px;
+  width: 250px;
+  height: 40px;
+  border-radius: 20px;
+  outline: transparent;
+  background-color: rgb(15, 14, 14);
+  color: skyblue;
+  border: 1px solid skyblue;
+}
+
+
+select:focus {
+  border-color: rgb(36, 211, 115);
 }

@@ -83,8 +83,9 @@ window.addEventListener("scroll", () => {
 function animate() {
   requestAnimationFrame(animate);
   mesh.rotation.z += 0.01;
+  mesh.rotation.x += -0.01;
   wireMesh.rotation.z += -0.006; //x,y
-  // wireMesh.rotation.x += -0.006;//x,y
+  wireMesh.rotation.x += -0.006;//x,y 
   renderer.render(scene, camera);
 }
 

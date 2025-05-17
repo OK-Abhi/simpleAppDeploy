@@ -25,7 +25,12 @@ const geometry = new THREE.IcosahedronGeometry(radius, 26);
 const outerRingGeo = new THREE.TorusGeometry(1.2 * 1.6, 0.3 * 0.13, 16, 100);
 const outerRingGeo2 = new THREE.TorusGeometry(1.2 * 1.8, 0.3 * 0.15, 16, 100);
 const ringGeo2 = new THREE.TorusGeometry(1.2 * 1.4, 0.14 * 0.3, 16, 100);
-const ringGeo = new THREE.TorusGeometry(radius * 1.2, radius * 0.12 * 0.3, 16, 100);
+const ringGeo = new THREE.TorusGeometry(
+  radius * 1.2,
+  radius * 0.12 * 0.3,
+  16,
+  100
+);
 
 // Material
 const material = new THREE.MeshBasicMaterial({
@@ -61,8 +66,8 @@ texture.repeat.set(2, 2); // Repeat the texture 2 times on both axes
 // Camera
 const aspect = width / height;
 
-const camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 10);
-camera.position.z = 4; //2
+const camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 100);
+camera.position.z = 4; //3 and 1000
 
 // Don't need to care it will be deleted soon
 // I have to check it first
@@ -76,12 +81,96 @@ const scene = new THREE.Scene();
 mesh.rotation.y += deg;
 scene.add(mesh);
 
+
+// Star function
+function getStarfield({ numStars = 800 } = {}) {
+  function randomSpherePoint() {
+    const radius = Math.random() * 25 + 25;
+    const u = Math.random();
+    const v = Math.random();
+    const theta = 2 * Math.PI * u;
+    const phi = Math.acos(2 * v - 1);
+    let x = radius * Math.sin(phi) * Math.cos(theta);
+    let y = radius * Math.sin(phi) * Math.sin(theta);
+    let z = radius * Math.cos(phi);
+
+    return {
+      pos: new THREE.Vector3(x, y, z),
+      hue: 0.6,
+      minDist: radius,
+    };
+  }
+  const verts = [];
+  const colors = [];
+  const positions = [];
+  let col;
+  for (let i = 0; i < numStars; i += 1) {
+    let p = randomSpherePoint();
+    const { pos, hue } = p;
+    positions.push(p);
+    col = new THREE.Color().setHSL(hue, 0.2, Math.random());
+    verts.push(pos.x, pos.y, pos.z);
+    colors.push(col.r, col.g, col.b);
+  }
+
+  // Custom Shader for stars
+  const starTexture = new THREE.TextureLoader().load("./img/circle.png");;
+  const shaderMaterial = new THREE.ShaderMaterial({
+    uniforms: {
+      pointTexture: { value: starTexture },
+    },
+    vertexShader: `
+    varying vec3 vColor;
+    void main() {
+      vColor = color;
+      vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+      gl_PointSize = 2.5 * (200.0 / -mvPosition.z); // size attenuation
+      gl_Position = projectionMatrix * mvPosition;
+    }
+  `,
+    fragmentShader: `
+    uniform sampler2D pointTexture;
+    varying vec3 vColor;
+    void main() {
+      vec4 texColor = texture2D(pointTexture, gl_PointCoord);
+      if (texColor.a < 0.1) discard;
+      gl_FragColor = vec4(vColor, 1.0) * texColor;
+    }
+  `,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    transparent: true,
+    vertexColors: true,
+  });
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute("position", new THREE.Float32BufferAttribute(verts, 3));
+  geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
+  const mat = shaderMaterial;
+  //   new THREE.PointsMaterial({
+  //   size: 0.5, // 1.5 0.2
+  //   vertexColors: true,
+  //   transparent: true,
+  //   alphaTest: 0.01,
+  //   depthWrite: false,
+  //   blending: THREE.AdditiveBlending,
+  //   map: shaderMaterial,
+  // });
+  const points = new THREE.Points(geo, mat);
+  return points;
+}
+
 // Adding the rings into the Uranus or 3D object
 mesh.add(rings);
 mesh.add(ring2);
 mesh.add(OuterRing);
 mesh.add(OuterRing2);
 
+// Create the starfield
+const starfield = getStarfield(); // Change numStars to a higher number if needed
+scene.add(starfield);
+
+// Create and add the starfield to the scene
 
 // Lighting
 // Sun like Light
@@ -100,14 +189,14 @@ window.addEventListener("wheel", (es) => {
   const scrollDelta = es.deltaY;
 
   // Adjust FOV based on scroll
-  camera.fov += scrollDelta * 0.05; // Modify the sensitivity factor as needed
-
+  // camera.fov += scrollDelta * 0.05; // Modify the sensitivity factor as needed
+  camera.fov -= scrollDelta * 0.2;
   // Clamp the FOV to a reasonable range
-  camera.fov = Math.max(10, Math.min(100, camera.fov)) - 0.05;
+  // camera.fov = Math.max(10, Math.min(100, camera.fov)) - 0.05;
 
   // Adjust the near and far planes based on the scroll (optional)
-  camera.near = Math.max(0.1, camera.near + scrollDelta * 0.01); // Adjust near plane based on scroll
-  camera.far = Math.max(100, camera.far + scrollDelta * 0.1); // Adjust far plane based on scroll
+  // camera.near = Math.max(0.1, camera.near + scrollDelta * 0.01); // Adjust near plane based on scroll
+  // camera.far = Math.max(100, camera.far + scrollDelta * 0.1); // Adjust far plane based on scroll
   camera.updateProjectionMatrix();
 });
 
@@ -119,6 +208,8 @@ function animate() {
   ring2.rotation.x += 0.01;
   OuterRing.rotation.x += 0.01;
   OuterRing2.rotation.x += 0.01;
+  // starfield.rotation.x += 0.001;
+  starfield.rotation.y += 0.001;
   controls.update(); // will be deleted soon.
   renderer.render(scene, camera);
 }

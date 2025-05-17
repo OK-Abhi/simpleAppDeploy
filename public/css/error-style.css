@@ -1,6 +1,7 @@
 * {
   background-color: black;
   font-family: Niagara Engraved;
+  overflow-y: hidden;
 }
 
 #error-section {
@@ -33,7 +34,7 @@
 
 #error-info {
   color: aliceblue;
-  font-size: 80px;
+ font-size: 60px; /* 60 */
 }
 
 h1 {

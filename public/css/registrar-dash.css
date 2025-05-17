@@ -1,0 +1,71 @@
+* {
+    font-family: Niagara Engraved;
+  }
+  body {
+    background-image: url(./img/registrar.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    overflow-y: hidden;
+  }
+  /* always give flex to parent which contains the elements */
+  section nav {
+    height: 100px;
+    width: 100%;
+    /* background-color: lightsteelblue; */
+    display: flex;
+    align-items: center; /*y axis center*/
+    justify-content: space-between; /*x axis*/
+    border-bottom: 1px solid #222;
+  }
+
+  #dash-image {
+    width: 100vh;
+    height: 100vw;
+  }
+
+  img {
+    height: 100vh;
+    width: 100vw;
+    object-fit: fill;
+  }
+  nav,
+  h2 {
+    font-size: 60px;
+    font-weight: 100;
+    /* text-align: right; */
+  }
+  /* .closed {
+    top: 5%;
+    right: 5%;
+    position: absolute;
+  } */
+  .nav-e {
+    padding: 0 10px;
+    /* width: 30%; */
+  }
+  nav #name {
+    font-size: 40px;
+    font-weight: 100;
+  }
+  a{
+    text-decoration: none;
+    color: #222;
+  }
+
+  #sidebar{
+    height: 100%;
+    width: 30%;
+    background-color: rgba(240, 248, 255, 0);
+    position: absolute; /*fixed w-40  NOTE:please make sure you have used 50% hue of the background color to get blur*/
+    top: 0;
+    right: -50%; /*depends on width, body overflow-x hidden*/
+    overflow-x: hidden;
+    backdrop-filter: blur(10px);
+    padding: 50px 60px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }

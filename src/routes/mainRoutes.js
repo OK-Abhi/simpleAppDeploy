@@ -25,8 +25,8 @@ router.get("/login", (req, res) => {
   console.log(req.url, req.method);
   res.sendFile(path.join(rootDir, "views", "login.html"));
 });
-// Signup Route
-router.get("/signup", async (req, res) => {
+// Register Route
+router.get("/register", async (req, res) => {
   res.sendFile(path.join(rootDir, "views", "register.html"));
 });
 
