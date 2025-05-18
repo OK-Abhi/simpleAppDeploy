@@ -65,15 +65,12 @@ texture.repeat.set(2, 2); // Repeat the texture 2 times on both axes
 
 // Camera
 const aspect = width / height;
+let fov = 75 ;
+let near = 0.1;
+let far = 100;
 
-const camera = new THREE.PerspectiveCamera(75, aspect, 0.1, 100);
+const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 camera.position.z = 4; //3 and 1000
-
-// Don't need to care it will be deleted soon
-// I have to check it first
-let fov = camera.fov;
-let near = camera.near;
-let far = camera.far;
 
 // Scene
 const deg = 97.77 * (Math.PI / 180);
@@ -147,15 +144,6 @@ function getStarfield({ numStars = 800 } = {}) {
   geo.setAttribute("position", new THREE.Float32BufferAttribute(verts, 3));
   geo.setAttribute("color", new THREE.Float32BufferAttribute(colors, 3));
   const mat = shaderMaterial;
-  //   new THREE.PointsMaterial({
-  //   size: 0.5, // 1.5 0.2
-  //   vertexColors: true,
-  //   transparent: true,
-  //   alphaTest: 0.01,
-  //   depthWrite: false,
-  //   blending: THREE.AdditiveBlending,
-  //   map: shaderMaterial,
-  // });
   const points = new THREE.Points(geo, mat);
   return points;
 }
@@ -170,8 +158,6 @@ mesh.add(OuterRing2);
 const starfield = getStarfield(); // Change numStars to a higher number if needed
 scene.add(starfield);
 
-// Create and add the starfield to the scene
-
 // Lighting
 // Sun like Light
 const light = new THREE.DirectionalLight(0xffffff, 1);
@@ -184,19 +170,12 @@ controls.enableDamping = true;
 controls.enableDampingFactor = 1; //0.3
 
 // Camera Configuration
-// position going to be changed when you scroll using wheel event which are present in the mouse
+// position going to be changed when you scroll using wheel event which is present in the mouse
 window.addEventListener("wheel", (es) => {
   const scrollDelta = es.deltaY;
 
   // Adjust FOV based on scroll
-  // camera.fov += scrollDelta * 0.05; // Modify the sensitivity factor as needed
   camera.fov -= scrollDelta * 0.2;
-  // Clamp the FOV to a reasonable range
-  // camera.fov = Math.max(10, Math.min(100, camera.fov)) - 0.05;
-
-  // Adjust the near and far planes based on the scroll (optional)
-  // camera.near = Math.max(0.1, camera.near + scrollDelta * 0.01); // Adjust near plane based on scroll
-  // camera.far = Math.max(100, camera.far + scrollDelta * 0.1); // Adjust far plane based on scroll
   camera.updateProjectionMatrix();
 });
 

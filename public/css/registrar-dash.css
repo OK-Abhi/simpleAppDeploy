@@ -2,7 +2,7 @@
     font-family: Niagara Engraved;
   }
   body {
-    background-image: url(./img/registrar.jpg);
+    background-color: lightsteelblue;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -13,7 +13,6 @@
   section nav {
     height: 100px;
     width: 100%;
-    /* background-color: lightsteelblue; */
     display: flex;
     align-items: center; /*y axis center*/
     justify-content: space-between; /*x axis*/

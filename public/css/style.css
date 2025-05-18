@@ -6,10 +6,7 @@ body {
   height: 100vh;
   padding-inline: 1rem;
   margin: 0;
-  /* overflow: hidden; */
   overflow-x: hidden;
-  /* font-family: poppins,sans-serif, "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", */
-  /* "Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
   background-color: rgb(0, 0, 0);
   color: rgb(87, 168, 235);
 }
@@ -59,15 +56,13 @@ a:hover {
 
 p {
   width: 750px;
+  font-weight: lighter;
   font-size: x-large;
 }
-/* 
-p:hover {
-  color: rgb(6, 81, 147);
-  text-transform: capitalize;
-  width: 50rem;
-} */
 
+h2{
+  font-weight: 400;
+}
 h2:hover {
   color: lightgreen;
 }
@@ -76,36 +71,14 @@ h1 {
   font-size: 4.5rem;
 }
 
-/* @media screen and (max-width: 768px) {
-  hr {
-    height: 2px;
-    background-color: #333;
-  }
-} */
-
 #three-container {
   width: 100%;
   height: 100vh;
-  /* margin-top: 8rem; */
-  /* margin-left: 1rem; */
   position: absolute;
   top: 0;
   left: 0;
   z-index: -1; /* Place the 3D canvas behind the other content */
 }
-
-/* For large screens */
-/* @media screen and (min-width: 1024px) {
-  hr {
-    height: 3px;
-    background-color: #000;
-  }
-}
-
-hr {
-  width: 100%;
-  background-color: aliceblue;
-} */
 
 #content {
   margin-top: 330px;
