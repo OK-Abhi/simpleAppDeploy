@@ -13,6 +13,7 @@ const usersRoutes = require("./routes/authRoutes");
 const registrarRoutes = require("./routes/usersRoutes");
 const infoRoute = require("./routes/InfoRoutes"); // ignore this for now
 const errorHandler = require("./middleware/errorHandler");
+const connectDB = require("./config/dbConnection");
 
 // Using those External Modules
 const app = express();
@@ -44,6 +45,13 @@ app.use((req, res, next) => {
 });
 
 // Server
-app.listen(port, (error) => {
-  console.log(`Listening on ${port} and error is ${error}`);
-});
+connectDB()
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Server is running on http://localhost:${port}`);
+    });
+    // https.createServer(app).listen(port)
+  })
+  .catch((error) => {
+    console.log(`error ${error}`);
+  });
